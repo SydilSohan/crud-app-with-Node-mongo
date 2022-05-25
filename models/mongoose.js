@@ -7,12 +7,12 @@ const articleSchema = new mongoose.Schema ({
     type: String,
     required: true
   },
-  author: {
+nType: {
     type: String,
-    required: true
   },
   description: {
     type: String,
+      required: true
   },
   markdown: {
     type: String,

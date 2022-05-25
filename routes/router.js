@@ -25,12 +25,12 @@ router.post('/', async (req, res) => {
    let article = new Article ({
     title : req.body.title,
     description : req.body.content,
-    author : req.body.author,
+    nType : req.body.nType,
     markdown: req.body.markdown
   })
 try {
      article = await article.save()
-     res.redirect(`/articles/${article.slug}`)
+     res.redirect(`/notices/${article.slug}`)
    } catch (e) {
      console.log(e)
      res.render(`compose`, { article: article })

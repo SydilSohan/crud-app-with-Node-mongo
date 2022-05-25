@@ -25,12 +25,24 @@ app.get("/", async function(req, res){
 
   let articles = await Article.find().sort({createdAt: 'desc'});
 
+
+
+
   res.render("articles", {article: articles});
 
 
 });
 
+app.get("/allnotices", async function(req, res){
 
+  let articles = await Article.find().sort({createdAt: 'desc'});
+  let important = await Article.find({nType: 'Important'}).sort({createdAt: 'desc'});
+  let assignments = await Article.find({nType: 'Assignments'}).sort({createdAt: 'desc'});
+
+
+  res.render("allnotices", {article: articles, important: important, assignments: assignments});
+
+});
 
 // app.get("/posts/new", function(req, res){
 //
