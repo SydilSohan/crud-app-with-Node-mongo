@@ -3,7 +3,7 @@
 
 <div class="container  pt-4 pb-4">
   <h1 id="timer" class="mb-6"></h1>
-  <a href="/articles/new" class="btn btn-secondary"> New Article</a>
+  <a href="/notices/new" class="btn btn-secondary">Write New Notice</a>
   <a href="/allnotices" class="btn btn-secondary"> All notices</a>
 
 </div>
@@ -26,7 +26,8 @@
     <div class="container">
       <p> <%= article.markdown %></p>
     </div>
-<a href="/articles/<%= article.slug %>" class="btn btn-primary"> View Full</a>
+<a href="/notices/<%= article.slug %>" class="btn btn-primary"> View Full</a>
+<a href="/notices/edit/<%= article.id %>" class="btn btn-success"> Edit This Notice</a>
 
   </div>
 

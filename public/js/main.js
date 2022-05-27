@@ -14,4 +14,4 @@
    	curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
    var today =  dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
 
-   document.getElementsByTagName('h1')[0].innerHTML = today;
+   document.getElementsByTagName('h3')[0].innerHTML = today;
