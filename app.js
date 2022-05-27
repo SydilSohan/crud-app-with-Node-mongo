@@ -55,6 +55,10 @@ app.get("/noticesN", async function(req, res){
   res.render("Notices", {article: articles, important: important, assignments: assignments});
 
 });
+app.get('/:slug', async function (req, res){
+  await Article.deleteOne({slug: req.params.slug})
+  res.redirect('/backend')
+})
 let port = 3000;
 app.listen(process.env.PORT || port, function(){
   console.log("Server is running on http://localhost:" + port + "  :D  ");
