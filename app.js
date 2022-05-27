@@ -8,12 +8,16 @@ const mongoose = require('mongoose');
 const router = require('./routes/router.js')
 const Article = require('./models/mongoose.js')
 
+// app.use('/notices', router);
+// mongoose.connect('mongodb://127.0.0.1:27017/blogDB', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
 app.use('/notices', router);
-mongoose.connect('mongodb://127.0.0.1:27017/blogDB', {
+mongoose.connect('mongodb+srv://sydilSohan:nus4lyfe@cluster0.xthnm.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
-
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
