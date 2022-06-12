@@ -14,10 +14,7 @@ nType: {
     type: String,
       required: true
   },
-  markdown: {
-    type: String,
-    required: false
-  },
+
   createdAt: {
     type: Date,
     default: Date.now,

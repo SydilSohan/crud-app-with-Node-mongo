@@ -26,7 +26,6 @@ router.post('/', async (req, res) => {
     title : req.body.title,
     description : req.body.content,
     nType : req.body.nType,
-    markdown: req.body.markdown
   })
 try {
      article = await article.save()
