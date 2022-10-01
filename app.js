@@ -14,7 +14,7 @@ const Article = require('./models/mongoose.js')
 //     useUnifiedTopology: true
 // });
 app.use('/notices', router);
-mongoose.connect('mongodb+srv://sydilSohan:nus4lyfe@cluster0.xthnm.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('COnnection URl', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -44,7 +44,9 @@ app.get("/", async function(req, res){
   res.render("allnotices", {article: articles, important: important, assignments: assignments});
 
 });
-
+app.get('/login', function (req, res){
+  res.render('login')
+})
 app.get("/noticesN", async function(req, res){
 
   let articles = await Article.find().sort({createdAt: 'desc'});
